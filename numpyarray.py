@@ -134,3 +134,45 @@ array12 = np.linspace(0, 10, 5, endpoint=False, dtype=int)
 # dtype=int casts the float results to integers
 # Shape: (5,)
 # Output: [0 2 4 6 8]
+
+#  ---------------------- np.random.rand ----------------------
+
+# ✅ Generate 5 random numbers between 0 and 1 (uniform distribution)
+array111 = np.random.rand(5)
+# Output: [0.715 0.312 ...]  (random values)
+# Shape: (5,)
+# Each number is drawn from a **uniform distribution** over [0, 1)
+# Note: All values are floats between 0 (inclusive) and 1 (exclusive)
+
+# ✅ Generate a 2D array (2 rows, 55 columns) of random values between 0 and 1
+array211 = np.random.rand(2, 55)
+# Output: 2x55 matrix with values in [0, 1)
+# Shape: (2, 55)
+# Again, values are from a uniform distribution
+
+# ---------------------- np.random.randn ----------------------
+
+# ✅ Generate 5 random numbers from the **standard normal distribution**
+array311 = np.random.randn(5)
+# Output: [ 1.53 -0.71 ...] (random values)
+# Shape: (5,)
+# Values follow a **normal distribution** with mean 0 and standard deviation 1 (μ=0, σ=1)
+# Can include negative and positive numbers, unlike `rand()`
+
+# ---------------------- np.random.normal ----------------------
+
+# ✅ Generate a 2D array of shape (2, 3) from a **normal distribution**
+# Parameters: mean=0, std=1, size=(2, 3)
+array411 = np.random.normal(0, 1, (2, 3))
+# Output: 2x3 matrix with normally distributed values
+# Each value is drawn from N(0, 1)
+# Shape: (2, 3)
+
+# ---------------------- np.random.randint ----------------------
+
+# ✅ Generate a 2D array of random integers from 0 (inclusive) to 10 (exclusive)
+array122 = np.random.randint(0, 10, (2, 3))
+# Output: 2x3 matrix of random integers like [[3 7 1], [4 0 9]]
+# Values are between 0 and 9 (10 is excluded)
+# Shape: (2, 3)
+# dtype: int
