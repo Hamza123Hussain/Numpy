@@ -176,3 +176,37 @@ array122 = np.random.randint(0, 10, (2, 3))
 # Values are between 0 and 9 (10 is excluded)
 # Shape: (2, 3)
 # dtype: int
+
+# ---------------------- Example Array ----------------------
+
+# Let's create a 2D NumPy array (2 rows, 3 columns)
+array = np.array([[1, 2, 3], [4, 5, 6]])
+# This array looks like:
+# [[1 2 3]
+#  [4 5 6]]
+
+# ✅ Check the number of dimensions
+print(array.ndim)
+# Output: 2
+# .ndim gives the number of dimensions (axes) of the array
+# 2D array → .ndim = 2
+# 1D array → .ndim = 1, 3D array → .ndim = 3, etc.
+
+# ✅ Check the shape of the array
+print(array.shape)
+# Output: (2, 3)
+# .shape returns a tuple representing the array’s shape
+# (2, 3) means 2 rows and 3 columns
+
+# ✅ Check the total number of elements
+print(array.size)
+# Output: 6
+# .size returns the total number of elements in the array
+# 2 rows × 3 columns = 6 elements
+
+# ✅ Check the data type of elements in the array
+print(array.dtype)
+# Output: int64 (or int32 depending on system)
+# .dtype returns the data type of the array elements
+# You can also set the dtype when creating an array like:
+# np.array([[1, 2], [3, 4]], dtype=float)
