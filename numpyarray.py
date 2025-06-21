@@ -31,3 +31,106 @@ print('Dimensions of Array', MultiDimensionArray.ndim)
 # The `.ndim` attribute tells you the number of dimensions (or axes) of the array.
 # For `MultiDimensionArray`, which is a 3D array, `ndim` will be 3.
 # A 1D array has `ndim = 1`, a 2D array has `ndim = 2`, and so on.
+
+# ---------------------- np.zeros ----------------------
+# ✅ Create a 1D NumPy array with 4 elements, all initialized to 0.0 (default dtype is float)
+array1 = np.zeros(4)  
+# Output: [0. 0. 0. 0.]
+# Shape: (4,)
+# ✅ Create a 2D array of shape (2 rows, 3 columns), all elements initialized to 0
+# dtype=int means all values will be of integer type instead of default float
+array2 = np.zeros((2, 3), dtype=int)  
+# Output:
+# [[0 0 0]
+#  [0 0 0]]
+# Shape: (2, 3)
+# ---------------------- np.ones ----------------------
+# ✅ Create a 1D NumPy array with 4 elements, all initialized to 1.0 (default dtype is float)
+array3 = np.ones(4)
+# Output: [1. 1. 1. 1.]
+# Shape: (4,)
+# ✅ Create a 2D array of shape (2x3), all values set to 1 and type set to integer
+array4 = np.ones((2, 3), dtype=int)
+# Output:
+# [[1 1 1]
+#  [1 1 1]]
+# Shape: (2, 3)
+# ---------------------- np.full ----------------------
+# ✅ Create a 1D array with 4 elements, all initialized to value 5 (default dtype is inferred from value)
+array5 = np.full(4, 5)
+# Output: [5 5 5 5]
+# Shape: (4,)
+# ✅ Create a 2D array of shape (2x3), all elements initialized to 5
+array6 = np.full((2, 3), 5)
+# Output:
+# [[5 5 5]
+#  [5 5 5]]
+# Shape: (2, 3)
+
+# ---------------------- np.arange ----------------------
+# ✅ Create a 1D array using np.arange
+# Syntax: np.arange(start, stop, step, dtype)
+# Starts from 2, stops *before* 10, with a step of 2
+# Result: [2, 4, 6, 8]
+array7 = np.arange(2, 10, 2, dtype=int)
+# Explanation:
+# Start at 2 → next is 4 → then 6 → then 8 → 10 is excluded
+# dtype=int ensures all elements are integers
+# Shape: (4,)
+# Output: [2 4 6 8]
+
+# ❌ Incorrect usage of np.array
+# np.array expects a sequence (like a list, tuple, etc.), not multiple separate numbers
+# The following line will throw a TypeError:
+# array8 = np.array(2, 10, dtype=int)
+
+# ✅ Correct way: Wrap the values in a list or tuple to create a 1D array
+array8 = np.array([2, 10], dtype=int)
+# Creates a 1D array with 2 elements: [2, 10]
+# dtype=int specifies the data type
+# Output: [ 2 10 ]
+
+# ---------------------- np.eye ----------------------
+# ✅ Create a 2D square identity matrix of shape (3x3)
+# np.eye(N, dtype=int) → creates an identity matrix with N rows and N columns
+# An identity matrix has 1s on the main diagonal and 0s elsewhere
+array9 = np.eye(3, dtype=int)
+# Output:
+# [[1 0 0]
+#  [0 1 0]
+#  [0 0 1]]
+# Shape: (3, 3)
+# dtype=int ensures all values are integers
+# ✅ Create a 2D identity-like matrix of shape (3x4)
+# np.eye(N, M, dtype=int) → creates a matrix with N rows and M columns
+# It will still place 1s on the "main diagonal" (where row index == column index), up to the smallest of N or M
+array10 = np.eye(3, 4, dtype=int)
+# Output:
+# [[1 0 0 0]
+#  [0 1 0 0]
+#  [0 0 1 0]]
+# Shape: (3, 4)
+# dtype=int ensures the values are integers
+
+# ---------------------- np.linspace ----------------------
+
+# ✅ Create 5 evenly spaced numbers between 0 and 1 (inclusive)
+# Syntax: np.linspace(start, stop, num)
+array11 = np.linspace(0, 1, 5)
+# Explanation:
+# It includes both start (0) and stop (1) by default.
+# Divides the interval [0, 1] into 4 equal parts (5 numbers total).
+# Output: [0.   0.25 0.5  0.75 1.  ]
+# dtype is float by default
+# Shape: (5,)
+
+# ✅ Create 5 evenly spaced numbers between 0 and 10, excluding the endpoint
+# Syntax: np.linspace(start, stop, num, endpoint=False, dtype=int)
+array12 = np.linspace(0, 10, 5, endpoint=False, dtype=int)
+# Explanation:
+# It excludes the stop value (10) because endpoint=False.
+# It will generate 5 values spaced equally in the interval [0, 10).
+# The values: [0, 2, 4, 6, 8] — equally spaced with step size = 2
+# dtype=int casts the float results to integers
+# Shape: (5,)
+# Output: [0 2 4 6 8]
